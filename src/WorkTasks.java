@@ -1,14 +1,7 @@
-import java.util.ArrayList;
 
 public class WorkTasks implements Container{
     
-    ArrayList<String> tasks = new ArrayList<String>();
-    public WorkTasks()
-    {
-        tasks.add("Finish project by Friday");
-        tasks.add("Finish financial report");
-        tasks.add("Talk to supervisor");
-    }
+    String[] tasks = {"Finish project by Friday","Finish financial report","Talk to supervisor"};
 
     @Override
     public Iterator getIterator() {
@@ -20,7 +13,7 @@ public class WorkTasks implements Container{
     
         @Override
         public boolean hasNext() {
-            if(index<tasks.size()){
+            if(index<tasks.length){
                 return true;
             }else{
                 return false;
@@ -30,7 +23,7 @@ public class WorkTasks implements Container{
         @Override
         public Object next() {
             if(this.hasNext()){
-                return tasks.get(index++);
+                return tasks[index++];
             }else{
                 return null;
             }
